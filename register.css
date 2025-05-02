@@ -1,0 +1,23 @@
+:root{--font-family:'Roboto',Arial,sans-serif;--color-primary:#5A54F0;--color-primary-light:#6F69FF;--color-secondary:#1A1B22;--color-text:#1A1B22;--color-text-secondary:#7F8285;--color-background:#FFFFFF;--color-background-secondary:#F5F5F7;--border-radius:12px}
+*{margin:0;padding:0;box-sizing:border-box;font-family:var(--font-family)}
+.register-page{background-color:var(--color-background-secondary);min-height:100vh;display:flex;flex-direction:column}
+.register-main{flex:1;padding:100px 0}
+.register-container{max-width:480px;margin:0 auto;padding:40px;background:var(--color-background);border-radius:var(--border-radius);box-shadow:0 4px 20px rgba(0,0,0,0.1)}
+.register-title{font-size:28px;font-weight:700;margin-bottom:32px;text-align:center;color:var(--color-text)}
+.register-form{display:flex;flex-direction:column;gap:24px}
+.form-group{display:flex;flex-direction:column;gap:8px}
+.form-label{font-weight:500;color:var(--color-text);font-size:14px}
+.form-input{padding:12px 16px;border:2px solid #E5E7EB;border-radius:var(--border-radius);font-size:16px;transition:border-color 0.2s;width:100%;box-sizing:border-box}
+ .form-input:focus{outline:none;border-color:var(--color-primary)}
+ .form-input.error{border-color:#EF4444}
+.form-error{font-size:14px;color:#EF4444;min-height:20px;display:none}
+ .form-error.visible{display:block}
+.register-button{margin-top:8px;width:100%;padding:14px;font-size:16px;background-color:var(--color-primary);color:white;border:none;border-radius:var(--border-radius);cursor:pointer;transition:background-color 0.2s}
+ .register-button:hover{background-color:var(--color-primary-light)}
+.register-login-link{text-align:center;font-size:14px;color:var(--color-text-secondary)}
+.link{color:var(--color-primary);text-decoration:none;font-weight:500;transition:color 0.2s}
+ .link:hover{color:var(--color-primary-light)}
+@media (max-width:768px){.register-main{padding:60px 0}
+ .register-container{margin:0 20px;padding:24px}
+ .register-title{font-size:24px;margin-bottom:24px}
+}
