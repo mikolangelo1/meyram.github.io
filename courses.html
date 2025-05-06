@@ -2,23 +2,21 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Курсы | EduTech</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="courses.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body class="courses-page">
     <header class="header">
         <div class="container header__container">
-            <a href="/" class="logo">EduTech</a>
+            <a href="index.html" class="logo">EduTech</a>
             <nav class="nav">
                 <ul class="nav__list">
                     <li><a href="courses.html" class="nav__link nav__link_active">Курсы</a></li>
                     <li><a href="index.html#career" class="nav__link">Карьера</a></li>
-                    <li><a href="index.html#about" class="nav__link">О нас</a></li>
+                    <li><a href="about.html" class="nav__link">О нас</a></li>
                 </ul>
             </nav>
             <div class="header__auth">
@@ -31,19 +29,23 @@
         <section class="courses-hero">
             <div class="container">
                 <h1 class="courses-title">Наши курсы</h1>
-                <p class="courses-subtitle">Выберите направление обучения и начните свой путь в IT</p>
+                <p class="courses-subtitle">Выберите направление и начните свой путь в IT</p>
             </div>
         </section>
 
-        <section class="courses-grid">
+        <section class="courses-filters">
             <div class="container">
-                <div class="courses-filters">
+                <div class="filter-buttons">
                     <button class="filter-button active" data-filter="all">Все курсы</button>
                     <button class="filter-button" data-filter="programming">Программирование</button>
                     <button class="filter-button" data-filter="data">Анализ данных</button>
                     <button class="filter-button" data-filter="design">Дизайн</button>
                 </div>
+            </div>
+        </section>
 
+        <section class="courses-grid">
+            <div class="container">
                 <div class="courses-list">
                     <div class="course-card" data-category="programming">
                         <div class="course-card__header">
@@ -51,7 +53,7 @@
                             <span class="course-card__duration">6 месяцев</span>
                         </div>
                         <h3 class="course-card__title">Веб-разработка с нуля</h3>
-                        <p class="course-card__description">Научитесь создавать современные сайты и веб-приложения</p>
+                        <p class="course-card__description">HTML, CSS, JavaScript и современные фреймворки</p>
                         <div class="course-card__stats">
                             <div class="stats-item">
                                 <span class="stats-number">24</span>
@@ -62,7 +64,7 @@
                                 <span class="stats-label">менторов</span>
                             </div>
                         </div>
-                        <button class="button button_primary course-card__button">Подробнее</button>
+                        <a href="404.html" class="button button_secondary">Подробнее</a>
                     </div>
 
                     <div class="course-card" data-category="data">
@@ -71,7 +73,7 @@
                             <span class="course-card__duration">8 месяцев</span>
                         </div>
                         <h3 class="course-card__title">Data Science</h3>
-                        <p class="course-card__description">Освойте анализ данных и машинное обучение</p>
+                        <p class="course-card__description">Python, машинное обучение и анализ данных</p>
                         <div class="course-card__stats">
                             <div class="stats-item">
                                 <span class="stats-number">18</span>
@@ -82,7 +84,7 @@
                                 <span class="stats-label">менторов</span>
                             </div>
                         </div>
-                        <button class="button button_primary course-card__button">Подробнее</button>
+                        <a href="404.html" class="button button_secondary">Подробнее</a>
                     </div>
 
                     <div class="course-card" data-category="design">
@@ -91,7 +93,7 @@
                             <span class="course-card__duration">4 месяца</span>
                         </div>
                         <h3 class="course-card__title">UI/UX Дизайн</h3>
-                        <p class="course-card__description">Создавайте удобные и красивые интерфейсы</p>
+                        <p class="course-card__description">Figma, дизайн-системы и прототипирование</p>
                         <div class="course-card__stats">
                             <div class="stats-item">
                                 <span class="stats-number">15</span>
@@ -102,7 +104,27 @@
                                 <span class="stats-label">менторов</span>
                             </div>
                         </div>
-                        <button class="button button_primary course-card__button">Подробнее</button>
+                        <a href="404.html" class="button button_secondary">Подробнее</a>
+                    </div>
+
+                    <div class="course-card" data-category="programming">
+                        <div class="course-card__header">
+                            <span class="course-card__level">Продвинутый</span>
+                            <span class="course-card__duration">7 месяцев</span>
+                        </div>
+                        <h3 class="course-card__title">Java Developer</h3>
+                        <p class="course-card__description">Java, Spring Framework и микросервисы</p>
+                        <div class="course-card__stats">
+                            <div class="stats-item">
+                                <span class="stats-number">20</span>
+                                <span class="stats-label">проектов</span>
+                            </div>
+                            <div class="stats-item">
+                                <span class="stats-number">10</span>
+                                <span class="stats-label">менторов</span>
+                            </div>
+                        </div>
+                        <a href="404.html" class="button button_secondary">Подробнее</a>
                     </div>
                 </div>
             </div>
@@ -110,9 +132,30 @@
 
         <section class="statistics">
             <div class="container">
-                <h2 class="statistics-title">Статистика популярности курсов</h2>
-                <div class="statistics-wrapper">
-                    <canvas id="coursesChart"></canvas>
+                <h2 class="section-title">Статистика курсов</h2>
+                <div class="statistics-grid">
+                    <div class="statistics-chart">
+                        <h3 class="statistics-subtitle">Популярность направлений</h3>
+                        <canvas id="coursesChart"></canvas>
+                    </div>
+                    <div class="statistics-chart">
+                        <h3 class="statistics-subtitle">Трудоустройство выпускников</h3>
+                        <canvas id="employmentChart"></canvas>
+                    </div>
+                </div>
+                <div class="statistics-info">
+                    <div class="info-card">
+                        <div class="info-card__number">95%</div>
+                        <div class="info-card__text">Трудоустройство<br>выпускников</div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-card__number">12k+</div>
+                        <div class="info-card__text">Активных<br>студентов</div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-card__number">150+</div>
+                        <div class="info-card__text">Компаний-<br>партнеров</div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -122,6 +165,7 @@
         <div class="container footer__container">
             <div class="footer__bottom">
                 <p class="footer__copyright">© 2025 EduTech. Все права защищены</p>
+                <p class="footer__update">Последнее обновление: 05.05.2025 23:48:12</p>
             </div>
         </div>
     </footer>

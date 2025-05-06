@@ -1,0 +1,143 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О нас | EduTech</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <script>
+        window.currentUser = 'mikolangelo1';
+        window.lastUpdate = '2025-05-05 23:33:10';
+    </script>
+</head>
+<body class="about-page">
+    <header class="header">
+        <div class="container header__container">
+            <a href="index.html" class="logo">EduTech</a>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li><a href="courses.html" class="nav__link">Курсы</a></li>
+                    <li><a href="index.html#career" class="nav__link">Карьера</a></li>
+                    <li><a href="about.html" class="nav__link nav__link_active">О нас</a></li>
+                </ul>
+            </nav>
+            <div class="header__auth">
+                <a href="register.html" class="button button_secondary">Войти</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <section class="about-hero">
+            <div class="container">
+                <h1 class="about-title">О нашей платформе</h1>
+                <p class="about-subtitle">Мы создаем будущее образования вместе с вами</p>
+            </div>
+        </section>
+
+        <section class="about-values">
+            <div class="container">
+                <h2 class="section-title">Наши ценности</h2>
+                <div class="about-values__grid">
+                    <div class="value-card" data-value="quality">
+                        <div class="value-card__icon">🎯</div>
+                        <h3 class="value-card__title">Качество</h3>
+                        <p class="value-card__text">Мы предоставляем только проверенные и актуальные материалы</p>
+                    </div>
+                    <div class="value-card" data-value="innovation">
+                        <div class="value-card__icon">💡</div>
+                        <h3 class="value-card__title">Инновации</h3>
+                        <p class="value-card__text">Используем современные технологии обучения</p>
+                    </div>
+                    <div class="value-card" data-value="community">
+                        <div class="value-card__icon">👥</div>
+                        <h3 class="value-card__title">Сообщество</h3>
+                        <p class="value-card__text">Развиваем активное комьюнити профессионалов</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-stats">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-card" data-stat="students">
+                        <div class="stat-card__number" data-value="15000">0</div>
+                        <div class="stat-card__label">Студентов</div>
+                    </div>
+                    <div class="stat-card" data-stat="courses">
+                        <div class="stat-card__number" data-value="75">0</div>
+                        <div class="stat-card__label">Курсов</div>
+                    </div>
+                    <div class="stat-card" data-stat="mentors">
+                        <div class="stat-card__number" data-value="120">0</div>
+                        <div class="stat-card__label">Менторов</div>
+                    </div>
+                    <div class="stat-card" data-stat="graduates">
+                        <div class="stat-card__number" data-value="5000">0</div>
+                        <div class="stat-card__label">Выпускников</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-team">
+            <div class="container">
+                <h2 class="section-title">Наша команда</h2>
+                <div class="team-carousel">
+                    <div class="team-member">
+                        <div class="team-member__photo">👨‍💼</div>
+                        <h3 class="team-member__name">Уразбаев Мейрам</h3>
+                        <p class="team-member__role">CEO</p>
+                    </div>
+                    <div class="team-member">
+                        <div class="team-member__photo">👩‍💼</div>
+                        <h3 class="team-member__name">Нурбану Назарбек</h3>
+                        <p class="team-member__role">CTO</p>
+                    </div>
+                    <div class="team-member">
+                        <div class="team-member__photo">👨‍💻</div>
+                        <h3 class="team-member__name">Мейрам Кабдрашитович</h3>
+                        <p class="team-member__role">Lead Developer</p>
+                    </div>
+                </div>
+                <div class="carousel-controls">
+                    <button class="carousel-control prev">←</button>
+                    <button class="carousel-control next">→</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-contact">
+            <div class="container">
+                <h2 class="section-title">Свяжитесь с нами</h2>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <input type="text" class="form-input" placeholder="Ваше имя" value="mikolangelo1" readonly>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-input" placeholder="Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-input" placeholder="Ваше сообщение" required></textarea>
+                    </div>
+                    <button type="submit" class="button button_primary">Отправить</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer__container">
+            <div class="footer__bottom">
+                <p class="footer__copyright">© 2025 EduTech. Все права защищены</p>
+                <p class="footer__update">Последнее обновление: 05.05.2025 23:33:10</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="scroll-top" id="scrollTop">↑</div>
+    <script src="about.js"></script>
+</body>
+</html>

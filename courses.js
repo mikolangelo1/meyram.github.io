@@ -1,1 +1,143 @@
-﻿document.addEventListener('DOMContentLoaded',function(){const filterButtons=document.querySelectorAll('.filter-button');const courseCards=document.querySelectorAll('.course-card');filterButtons.forEach(button=>{button.addEventListener('click',()=>{filterButtons.forEach(btn=>btn.classList.remove('active'));button.classList.add('active');const filter=button.dataset.filter;courseCards.forEach(card=>{if(filter==='all'||card.dataset.category===filter){card.style.display='block';setTimeout(()=>card.style.opacity='1',0)}else{card.style.opacity='0';setTimeout(()=>card.style.display='none',300)}})})});const ctx=document.getElementById('coursesChart').getContext('2d');const courseData={labels:['Веб-разработка','Data Science','UI/UX Дизайн','Python','Java','DevOps'],datasets:[{label:'Количество студентов',data:[1200,800,600,900,700,500],backgroundColor:['#5A54F0','#6F69FF','#8884FF','#A19FFF','#BABBFF','#D3D4FF'],borderColor:'white',borderWidth:2}]};const config={type:'doughnut',data:courseData,options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'right',labels:{font:{family:'Roboto',size:14},padding:20}},title:{display:true,text:'Распределение студентов по курсам',font:{family:'Roboto',size:16,weight:'bold'},padding:{bottom:30}}},animation:{animateScale:true,animateRotate:true}}};new Chart(ctx,config);const animateOnScroll=(entries,observer)=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('animate-in');observer.unobserve(entry.target)}})};const observerOptions={threshold:0.1};const observer=new IntersectionObserver(animateOnScroll,observerOptions);document.querySelectorAll('.course-card').forEach(card=>{card.classList.add('animate-prepare');observer.observe(card)});const style=document.createElement('style');style.textContent=`.animate-prepare{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease-out,transform 0.6s ease-out}.animate-in{opacity:1;transform:translateY(0)}.course-card{transition:all 0.3s ease-out}`;document.head.appendChild(style)});
+﻿document.addEventListener('DOMContentLoaded', function () {
+    // Фильтрация курсов
+    initializeFilters();
+    // Инициализация диаграмм
+    initializeCharts();
+    // Анимации
+    initializeAnimations();
+});
+
+function initializeFilters() {
+    const filterButtons = document.querySelectorAll('.filter-button');
+    const courseCards = document.querySelectorAll('.course-card');
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+
+            const filter = button.dataset.filter;
+            courseCards.forEach(card => {
+                if (filter === 'all' || card.dataset.category === filter) {
+                    card.style.display = 'block';
+                    setTimeout(() => card.style.opacity = '1', 0);
+                } else {
+                    card.style.opacity = '0';
+                    setTimeout(() => card.style.display = 'none', 300);
+                }
+            });
+        });
+    });
+}
+
+function initializeCharts() {
+    // Диаграмма популярности курсов
+    const coursesCtx = document.getElementById('coursesChart');
+    if (coursesCtx) {
+        new Chart(coursesCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Веб-разработка', 'Data Science', 'UI/UX Дизайн', 'Java', 'Python', 'DevOps'],
+                datasets: [{
+                    data: [30, 20, 15, 12, 13, 10],
+                    backgroundColor: [
+                        '#5A54F0',
+                        '#6F69FF',
+                        '#8884FF',
+                        '#A19FFF',
+                        '#BABBFF',
+                        '#D3D4FF'
+                    ],
+                    borderColor: 'white',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                plugins: {
+                    legend: {
+                        position: 'right',
+                        labels: {
+                            font: {
+                                family: 'Roboto',
+                                size: 12
+                            },
+                            padding: 15
+                        }
+                    }
+                }
+            }
+        });
+    }
+
+    // Диаграмма трудоустройства
+    const employmentCtx = document.getElementById('employmentChart');
+    if (employmentCtx) {
+        new Chart(employmentCtx, {
+            type: 'bar',
+            data: {
+                labels: ['2023', '2024', '2025'],
+                datasets: [{
+                    label: 'Процент трудоустройства',
+                    data: [85, 92, 95],
+                    backgroundColor: '#5A54F0',
+                    borderRadius: 8
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 100,
+                        ticks: {
+                            callback: value => value + '%'
+                        }
+                    }
+                }
+            }
+        });
+    }
+}
+function initializeAnimations() {
+    const elements = document.querySelectorAll('.course-card, .info-card');
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-in');
+                    observer.unobserve(entry.target);
+                }
+            });
+        },
+        { threshold: 0.1 }
+    );
+
+    elements.forEach(el => {
+        el.classList.add('animate-prepare');
+        observer.observe(el);
+    });
+
+    // Добавляем стили для анимаций
+    const style = document.createElement('style');
+    style.textContent = `
+        .animate-prepare {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .animate-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    `;
+    document.head.appendChild(style);
+}
